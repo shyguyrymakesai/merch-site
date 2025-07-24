@@ -122,24 +122,24 @@ function App() {
             src={echoLeagueBanner}
             alt="Echo League Banner"
             className="h-10 w-auto max-w-xs rounded-lg shadow-lg animate-glitch"
-            style={{ objectFit: 'contain', background: 'transparent', maxWidth: '200px' }}
+            style={{ objectFit: 'contain', background: 'transparent', maxWidth: '12.5rem' }}
           />
         </div>
-        <p className="text-xl text-[#00fff0] mb-8 max-w-xl text-center font-mono animate-glitch-text">
+        <p className="text-xl text-[#00fff0] mb-8 max-w-xl text-center font-mono animate-glitch-text glitch-text">
           Futuristic, neon, and glitched-out merch for the next league of creators. Stand out. Be bold. Join the echo.
         </p>
-        <div className="text-2xl font-bold text-[#ff00ea] mb-2 underline decoration-[#ff00ea] decoration-4 underline-offset-4">Designs</div>
+        <div className="text-2xl font-bold text-[#ff00ea] mb-2 underline decoration-[#ff00ea] decoration-4 underline-offset-4 section-title">Designs</div>
       </header>
       <main className="container">
         <section id="shop" className="flex flex-col items-center py-12">
-          <div className="w-full flex items-center justify-center mb-8 relative" style={{ minHeight: '300px' }}>
+          <div className="w-full flex items-center justify-center mb-8 relative" style={{ minHeight: '18.75rem' }}>
             <button
               onClick={prev}
               className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#ff00ea] hover:animate-pulse"
-              style={{ position: 'absolute', left: '-60px', top: '50%', transform: 'translateY(-50%)' }}
+              style={{ position: 'absolute', left: '-3.75rem', top: '50%', transform: 'translateY(-50%)' }}
             >&#8592;</button>
             <div className="flex-1 flex flex-col items-center mx-4">
-              <div className="shop-item flex flex-col items-center border-2 border-[#ff00ea] w-full">
+              <div className="shop-item design-card flex flex-col items-center border-2 border-[#ff00ea] w-full">
                 <GlitchImage>
                   <div className="h-48 w-full flex items-center justify-center">
                     <span className="text-7xl text-[#fff200] drop-shadow-[0_2px_24px_rgba(255,242,0,0.7)]">{product.icon}</span>
@@ -153,7 +153,7 @@ function App() {
                       src={product.image}
                       alt={product.name + ' image'}
                       className="rounded-lg shadow-md object-contain h-10 w-auto bg-black/30"
-                      style={{ maxWidth: '200px' }}
+                      style={{ maxWidth: '12.5rem' }}
                     />
                   </div>
                   <p className="text-[#00fff0] mb-4 text-center font-mono">{product.description}</p>
@@ -163,7 +163,7 @@ function App() {
             <button
               onClick={next}
               className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#00fff0] hover:animate-pulse"
-              style={{ position: 'absolute', right: '-60px', top: '50%', transform: 'translateY(-50%)' }}
+              style={{ position: 'absolute', right: '-3.75rem', top: '50%', transform: 'translateY(-50%)' }}
             >&#8594;</button>
           </div>
           <button className="button-buy mt-4 px-16 py-5 text-2xl font-extrabold shadow-2xl">Buy this piece</button>
