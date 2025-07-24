@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch {
+  animation: glitch 1s infinite linear alternate;
+}
+
+@keyframes glitch-text {
+  0%, 100% { text-shadow: 0 0 8px #00fff0, 0 0 16px #ff00ea; }
+  20% { text-shadow: 2px 0 8px #ff00ea, -2px 0 16px #fff200; }
+  40% { text-shadow: -2px 0 8px #fff200, 2px 0 16px #00fff0; }
+  60% { text-shadow: 2px 2px 8px #ff00ea, -2px -2px 16px #fff200; }
+  80% { text-shadow: -2px 2px 8px #00fff0, 2px -2px 16px #ff00ea; }
+}
+
+.animate-glitch-text {
+  animation: glitch-text 1.2s infinite linear alternate;
+}
+
+/* Custom button styles (optional, can be replaced by Tailwind classes)
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+*/
