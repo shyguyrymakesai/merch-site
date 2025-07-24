@@ -99,7 +99,7 @@ function App() {
   const product = products[current];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-sans">
+    <div id="top" className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-sans">
       <header className="flex flex-col items-center justify-center py-8">
         <h1 className="text-6xl font-extrabold tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00fff0] via-[#ff00ea] to-[#fff200] drop-shadow-[0_2px_24px_rgba(0,255,255,0.7)] animate-pulse">echo-league</h1>
         <div className="flex justify-center items-center mb-2" style={{ width: '100%' }}>
@@ -115,12 +115,12 @@ function App() {
         </p>
         <div className="text-2xl font-bold text-[#ff00ea] mb-2">Designs</div>
       </header>
-      <main className="max-w-2xl mx-auto px-4">
+      <main className="container">
         <section id="shop" className="flex flex-col items-center py-12">
           <div className="w-full flex items-center justify-between mb-8">
             <button onClick={prev} className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition">&#8592;</button>
             <div className="flex-1 flex flex-col items-center mx-4">
-              <div className="bg-gradient-to-br from-[#232526] to-[#414345] rounded-2xl shadow-2xl overflow-hidden flex flex-col items-center border-2 border-[#ff00ea] w-full">
+              <div className="shop-item flex flex-col items-center border-2 border-[#ff00ea] w-full">
                 <GlitchImage>
                   <div className="h-48 w-full flex items-center justify-center">
                     <span className="text-7xl text-[#fff200] drop-shadow-[0_2px_24px_rgba(255,242,0,0.7)]">{product.icon}</span>
@@ -143,12 +143,13 @@ function App() {
             </div>
             <button onClick={next} className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition">&#8594;</button>
           </div>
-          <button className="mt-4 px-16 py-5 text-2xl bg-gradient-to-r from-[#00fff0] to-[#ff00ea] text-black rounded-full font-extrabold shadow-2xl hover:from-[#fff200] hover:to-[#ff00ea] transition">Buy this piece</button>
+          <button className="button-buy mt-4 px-16 py-5 text-2xl font-extrabold shadow-2xl">Buy this piece</button>
         </section>
       </main>
       <footer className="text-center py-8 text-[#00fff0] border-t border-[#ff00ea] mt-12 font-mono">
         &copy; {new Date().getFullYear()} echo-league. All rights reserved.
       </footer>
+      <a href="#top" className="back-to-top fixed bottom-4 right-4">&#8679;</a>
     </div>
   );
 }
