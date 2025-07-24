@@ -30,7 +30,7 @@ span {
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 600;
   margin-bottom: 1rem;
   color: #ffffff;
@@ -38,7 +38,8 @@ span {
 }
 
 .container {
-  max-width: 960px;
+  width: 90%;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -50,6 +51,14 @@ span {
   margin-bottom: 2rem;
   box-shadow: 0 0 20px #0ff2;
   transition: transform 0.3s ease;
+}
+
+.design-card {
+  width: 90%;
+  max-width: 25rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .shop-item:hover {
@@ -116,4 +125,20 @@ hr {
 
 .animate-glitch-text {
   animation: glitch-text 1.2s infinite linear alternate;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .design-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .glitch-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
