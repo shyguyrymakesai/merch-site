@@ -13,11 +13,16 @@ import imgNarcisus2 from './assets/Echo League Designs/Narcisus 2.png';
 import imgPrayingToAlgo from './assets/Echo League Designs/Praying to the Algo.png';
 import imgSaintSundown from './assets/Echo League Designs/Saint Sundown.png';
 import imgShyguy from './assets/Echo League Designs/Shyguy.png';
+import imgMeditationModernHeigths from './assets/Echo League Designs/Meditation on Modern Heigths.png';
+import imgStewardTheEarth from './assets/Echo League Designs/Steward The Earth.png';
 
 function GlitchImage({ children }) {
   return (
     <div className="relative group">
-      <div className="absolute inset-0 animate-glitch opacity-70 group-hover:opacity-100" style={{ filter: 'blur(2px) brightness(1.5) contrast(2) hue-rotate(30deg)' }}>
+      <div
+        className="absolute inset-0 animate-glitch opacity-70 group-hover:opacity-100"
+        style={{ filter: 'blur(2px) brightness(1.5) contrast(2) hue-rotate(30deg)', pointerEvents: 'none' }}
+      >
         {children}
       </div>
       <div className="relative">
@@ -88,6 +93,16 @@ const products = [
     description: 'The league’s mysterious mascot.',
     image: imgShyguy,
   },
+  {
+    name: 'Meditation on Modern Heigths',
+    description: 'A reflection on modernity and peace.',
+    image: imgMeditationModernHeigths,
+  },
+  {
+    name: 'Steward The Earth',
+    description: 'Guardianship and care for our planet.',
+    image: imgStewardTheEarth,
+  },
 ];
 
 function App() {
@@ -113,12 +128,16 @@ function App() {
         <p className="text-xl text-[#00fff0] mb-8 max-w-xl text-center font-mono animate-glitch-text">
           Futuristic, neon, and glitched-out merch for the next league of creators. Stand out. Be bold. Join the echo.
         </p>
-        <div className="text-2xl font-bold text-[#ff00ea] mb-2">Designs</div>
+        <div className="text-2xl font-bold text-[#ff00ea] mb-2 underline decoration-[#ff00ea] decoration-4 underline-offset-4">Designs</div>
       </header>
       <main className="container">
         <section id="shop" className="flex flex-col items-center py-12">
-          <div className="w-full flex items-center justify-between mb-8">
-            <button onClick={prev} className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition">&#8592;</button>
+          <div className="w-full flex items-center justify-center mb-8 relative" style={{ minHeight: '300px' }}>
+            <button
+              onClick={prev}
+              className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#ff00ea] hover:animate-pulse"
+              style={{ position: 'absolute', left: '-60px', top: '50%', transform: 'translateY(-50%)' }}
+            >&#8592;</button>
             <div className="flex-1 flex flex-col items-center mx-4">
               <div className="shop-item flex flex-col items-center border-2 border-[#ff00ea] w-full">
                 <GlitchImage>
@@ -141,7 +160,11 @@ function App() {
                 </div>
               </div>
             </div>
-            <button onClick={next} className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition">&#8594;</button>
+            <button
+              onClick={next}
+              className="px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#00fff0] hover:animate-pulse"
+              style={{ position: 'absolute', right: '-60px', top: '50%', transform: 'translateY(-50%)' }}
+            >&#8594;</button>
           </div>
           <button className="button-buy mt-4 px-16 py-5 text-2xl font-extrabold shadow-2xl">Buy this piece</button>
         </section>
