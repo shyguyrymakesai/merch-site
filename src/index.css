@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure padding doesn't cause horizontal overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(to bottom right, #09001f, #15062f);
   color: #e0f7ff;
@@ -127,6 +134,21 @@ hr {
   animation: glitch-text 1.2s infinite linear alternate;
 }
 
+/* Carousel navigation buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-button-left {
+  left: -3.75rem;
+}
+
+.carousel-button-right {
+  right: -3.75rem;
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 1.5rem;
@@ -140,5 +162,14 @@ hr {
   .glitch-text {
     font-size: 1.2rem;
     text-align: center;
+  }
+
+  /* Keep carousel buttons visible and avoid horizontal scroll */
+  .carousel-button-left {
+    left: 0.5rem;
+  }
+
+  .carousel-button-right {
+    right: 0.5rem;
   }
 }
