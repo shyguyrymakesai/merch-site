@@ -1,6 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: linear-gradient(to bottom right, #09001f, #15062f);
+  color: #e0f7ff;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  color: #ff00ff;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 5px #ff00ff80;
+}
+
+p,
+span {
+  font-family: 'Inter', sans-serif;
+  color: #c0faff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px #0ff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.shop-item {
+  background: linear-gradient(to bottom right, #121212, #1f1f1f);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px #0ff2;
+  transition: transform 0.3s ease;
+}
+
+.shop-item:hover {
+  transform: scale(1.02);
+}
+
+.button-buy {
+  background: linear-gradient(to right, #0ff, #f0f);
+  color: black;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.button-buy:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 10px #f0f;
+}
+
+.back-to-top {
+  background: linear-gradient(to right, #0ff, #f0f);
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px #f0f;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px #f0f; }
+  50% { box-shadow: 0 0 20px #f0f; }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 2rem 0;
+}
 
 @keyframes glitch {
   0% { transform: translate(0); }
@@ -26,35 +117,3 @@
 .animate-glitch-text {
   animation: glitch-text 1.2s infinite linear alternate;
 }
-
-/* Custom button styles (optional, can be replaced by Tailwind classes)
-button {
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-*/
