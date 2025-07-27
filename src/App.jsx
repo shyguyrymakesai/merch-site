@@ -1,20 +1,11 @@
 
-import React, { useState } from 'react';
-import echoLeagueBanner from './assets/Echo-League Banner.png';
-import img404SoulNotFound from './assets/Echo League Designs/404 Soul Not Found.png';
-import imgArchangel from './assets/Echo League Designs/Archangel.png';
-import imgBrahmanShiva from './assets/Echo League Designs/Brahman and Shiva Do a Jig.png';
-import imgCowWantsToBelieve from './assets/Echo League Designs/Cow Wants to Believe.png';
-import imgDevilDancesToo from './assets/Echo League Designs/Devil Dances Too.png';
-import imgExcalibur from './assets/Echo League Designs/Excalibur.png';
-import imgJester from './assets/Echo League Designs/Jester.png';
-import imgNarcisus1 from './assets/Echo League Designs/Narcisus 1.png';
-import imgNarcisus2 from './assets/Echo League Designs/Narcisus 2.png';
-import imgPrayingToAlgo from './assets/Echo League Designs/Praying to the Algo.png';
-import imgSaintSundown from './assets/Echo League Designs/Saint Sundown.png';
-import imgShyguy from './assets/Echo League Designs/Shyguy.png';
-import imgMeditationModernHeigths from './assets/Echo League Designs/Meditation on Modern Heigths.png';
-import imgStewardTheEarth from './assets/Echo League Designs/Steward The Earth.png';
+import React, { useEffect } from 'react';
+import echoLeagueBanner from './assets/banners/First Bloom Banner.png';
+import beamMeUpBessie from './assets/merch mockups/Beam Me Up, Bessie Mockup.png';
+import ivlDropout from './assets/merch mockups/IVL Dropout Mockup.png';
+import jesterMockup from './assets/merch mockups/Jester Mockup.png';
+import narcisusV2 from './assets/merch mockups/Narcisus v2 Mokcup.png';
+import stewardTheEarth from './assets/merch mockups/Steward The Earth mockup.png';
 
 function GlitchImage({ children }) {
   return (
@@ -32,86 +23,67 @@ function GlitchImage({ children }) {
   );
 }
 
-const products = [
-  {
-    name: '404 Soul Not Found',
-    description: 'A digital echo of lost souls. Futuristic and bold.',
-    image: img404SoulNotFound,
-  },
-  {
-    name: 'Archangel',
-    description: 'Celestial glitch meets neon league.',
-    image: imgArchangel,
-  },
-  {
-    name: 'Brahman and Shiva Do a Jig',
-    description: 'Divine dance in a neon echo.',
-    image: imgBrahmanShiva,
-  },
-  {
-    name: 'Cow Wants to Believe',
-    description: 'Surreal, modern, and playful.',
-    image: imgCowWantsToBelieve,
-  },
-  {
-    name: 'Devil Dances Too',
-    description: 'Even devils join the echo league.',
-    image: imgDevilDancesToo,
-  },
-  {
-    name: 'Excalibur',
-    description: 'Legendary blade, legendary style.',
-    image: imgExcalibur,
-  },
-  {
-    name: 'Jester',
-    description: 'Glitchy fun for the bold.',
-    image: imgJester,
-  },
-  {
-    name: 'Narcisus 1',
-    description: 'Reflections in neon.',
-    image: imgNarcisus1,
-  },
-  {
-    name: 'Narcisus 2',
-    description: 'Reflections in neon, part two.',
-    image: imgNarcisus2,
-  },
-  {
-    name: 'Praying to the Algo',
-    description: 'Worship at the altar of code.',
-    image: imgPrayingToAlgo,
-  },
-  {
-    name: 'Saint Sundown',
-    description: 'Saintly vibes at sunset.',
-    image: imgSaintSundown,
-  },
-  {
-    name: 'Shyguy',
-    description: 'The league’s mysterious mascot.',
-    image: imgShyguy,
-  },
-  {
-    name: 'Meditation on Modern Heigths',
-    description: 'A reflection on modernity and peace.',
-    image: imgMeditationModernHeigths,
-  },
-  {
-    name: 'Steward The Earth',
-    description: 'Guardianship and care for our planet.',
-    image: imgStewardTheEarth,
-  },
-];
 
 function App() {
-  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    // Inject Google Analytics script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SPPTLR2M79';
+    document.head.appendChild(script);
 
-  const next = () => setCurrent((current + 1) % products.length);
-  const prev = () => setCurrent((current - 1 + products.length) % products.length);
+    const inlineScript = document.createElement('script');
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SPPTLR2M79');
+    `;
+    document.head.appendChild(inlineScript);
+    return () => {
+      document.head.removeChild(script);
+      document.head.removeChild(inlineScript);
+    };
+  }, []);
+  // Product grid data
 
-  const product = products[current];
+  const gridProducts = [
+    {
+      name: 'Beam Me Up, Bessie',
+      tagline: 'Cow-core meets cosmic absurdity. Moo-ve over, reality. (A cult classic in the making. Playful and ironic.)',
+      image: beamMeUpBessie,
+      hoverImage: beamMeUpBessie,
+      etsy: 'https://www.etsy.com/listing/4342099879/beam-me-up-bessie-tee',
+    },
+    {
+      name: 'You’re a Liar (Jester Hoodie)',
+      tagline: 'Court jesters speak in riddles. This one doesn’t. (Piercing and bold — truth wrapped in satire.)',
+      image: jesterMockup,
+      hoverImage: jesterMockup,
+      etsy: 'https://www.etsy.com/listing/4342090418/youre-a-liar-jester-hoodie',
+    },
+    {
+      name: 'Ivy League Dropout',
+      tagline: 'Academia couldn’t handle the glitch. (Defiant, clean, and instantly iconic.)',
+      image: ivlDropout,
+      hoverImage: ivlDropout,
+      etsy: 'https://www.etsy.com/listing/4342094845/ivy-league-dropout-tee',
+    },
+    {
+      name: 'Steward the Earth',
+      tagline: 'Sacred duty. Soft thread. Signal green. (Grounded, earnest — balances the louder pieces with purpose.)',
+      image: stewardTheEarth,
+      hoverImage: stewardTheEarth,
+      etsy: 'https://www.etsy.com/listing/4342088402/steward-the-earth-tee',
+    },
+    {
+      name: 'Narcisus v2',
+      tagline: '100K likes. Zero reflection. (Biting, mythic, hypermodern. Speaks for itself.)',
+      image: narcisusV2,
+      hoverImage: narcisusV2,
+      etsy: 'https://www.etsy.com/listing/4342085592/narcissus-v2',
+    },
+  ];
 
   return (
     <div id="top" className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-sans">
@@ -131,40 +103,83 @@ function App() {
         <div className="text-2xl font-bold text-[#ff00ea] mb-2 underline decoration-[#ff00ea] decoration-4 underline-offset-4 section-title">Designs</div>
       </header>
       <main className="container">
-        <section id="shop" className="flex flex-col items-center py-12">
-          <div className="w-full flex items-center justify-center mb-8 relative" style={{ minHeight: '18.75rem' }}>
-            <button
-              onClick={prev}
-              className="carousel-button carousel-button-left px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#ff00ea] hover:animate-pulse"
-            >&#8592;</button>
-            <div className="flex-1 flex flex-col items-center mx-4">
-              <div className="shop-item design-card flex flex-col items-center border-2 border-[#ff00ea] w-full">
-                <GlitchImage>
-                  <div className="h-48 w-full flex items-center justify-center">
-                    <span className="text-7xl text-[#fff200] drop-shadow-[0_2px_24px_rgba(255,242,0,0.7)]">{product.icon}</span>
-                  </div>
-                </GlitchImage>
+        <section id="shop" className="py-12">
+          {/* First row */}
+          <div className="flex flex-wrap gap-8 mb-8 justify-center">
+            {gridProducts.slice(0,2).map((prod) => (
+              <div key={prod.name} className="shop-item design-card border-2 border-[#ff00ea] rounded-xl bg-black/40 shadow-lg overflow-hidden group w-full sm:w-[48%] max-w-md">
+                <div className="w-full flex justify-center items-center relative">
+                  <img
+                    src={prod.image}
+                    alt={prod.name + ' mockup'}
+                    className="rounded-lg shadow-md object-contain w-full h-48 transition duration-300 group-hover:opacity-0"
+                    style={{ background: 'black', maxWidth: '100%' }}
+                  />
+                  <img
+                    src={prod.hoverImage}
+                    alt={prod.name + ' zoom'}
+                    className="absolute inset-0 rounded-lg shadow-md object-contain w-full h-48 opacity-0 group-hover:opacity-100 transition duration-300"
+                    style={{ background: 'black', maxWidth: '100%' }}
+                  />
+                </div>
                 <div className="p-6 w-full flex flex-col items-center">
-                  <h2 className="text-2xl font-bold mb-2 text-[#ff00ea]">{product.name}</h2>
-                  {/* Product image below name */}
-                  <div className="mb-2 w-full flex justify-center">
-                    <img
-                      src={product.image}
-                      alt={product.name + ' image'}
-                      className="rounded-lg shadow-md object-contain h-10 w-auto bg-black/30"
-                      style={{ maxWidth: '12.5rem' }}
-                    />
-                  </div>
-                  <p className="text-[#00fff0] mb-4 text-center font-mono">{product.description}</p>
+                  <h2 className="text-2xl font-bold mb-2 text-[#ff00ea]">{prod.name}</h2>
+                  <p className="text-[#00fff0] mb-4 text-center font-mono">{prod.tagline}</p>
+                  <a href={prod.etsy} target="_blank" rel="noopener noreferrer" className="button-buy mt-2 px-8 py-3 text-lg font-extrabold shadow-2xl">Buy on Etsy</a>
                 </div>
               </div>
-            </div>
-            <button
-              onClick={next}
-              className="carousel-button carousel-button-right px-4 py-2 bg-gradient-to-r from-[#ff00ea] to-[#00fff0] text-black rounded-full font-bold shadow-lg hover:from-[#fff200] hover:to-[#ff00ea] transition hover:shadow-[0_0_24px_8px_#00fff0] hover:animate-pulse"
-            >&#8594;</button>
+            ))}
           </div>
-          <button className="button-buy mt-4 px-16 py-5 text-2xl font-extrabold shadow-2xl">Buy this piece</button>
+          {/* Second row */}
+          <div className="flex flex-wrap gap-8 mb-8 justify-center">
+            {gridProducts.slice(2,4).map((prod) => (
+              <div key={prod.name} className="shop-item design-card border-2 border-[#ff00ea] rounded-xl bg-black/40 shadow-lg overflow-hidden group w-full sm:w-[48%] max-w-md">
+                <div className="w-full flex justify-center items-center relative">
+                  <img
+                    src={prod.image}
+                    alt={prod.name + ' mockup'}
+                    className="rounded-lg shadow-md object-contain w-full h-48 transition duration-300 group-hover:opacity-0"
+                    style={{ background: 'black', maxWidth: '100%' }}
+                  />
+                  <img
+                    src={prod.hoverImage}
+                    alt={prod.name + ' zoom'}
+                    className="absolute inset-0 rounded-lg shadow-md object-contain w-full h-48 opacity-0 group-hover:opacity-100 transition duration-300"
+                    style={{ background: 'black', maxWidth: '100%' }}
+                  />
+                </div>
+                <div className="p-6 w-full flex flex-col items-center">
+                  <h2 className="text-2xl font-bold mb-2 text-[#ff00ea]">{prod.name}</h2>
+                  <p className="text-[#00fff0] mb-4 text-center font-mono">{prod.tagline}</p>
+                  <a href={prod.etsy} target="_blank" rel="noopener noreferrer" className="button-buy mt-2 px-8 py-3 text-lg font-extrabold shadow-2xl">Buy on Etsy</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Third row, centered item */}
+          <div className="flex justify-center">
+            <div className="shop-item design-card border-2 border-[#ff00ea] rounded-xl bg-black/40 shadow-lg overflow-hidden group w-full sm:w-1/2 max-w-md">
+              <div className="w-full flex justify-center items-center relative">
+                <img
+                  src={gridProducts[4].image}
+                  alt={gridProducts[4].name + ' mockup'}
+                  className="rounded-lg shadow-md object-contain w-full h-48 transition duration-300 group-hover:opacity-0"
+                  style={{ background: 'black', maxWidth: '100%' }}
+                />
+                <img
+                  src={gridProducts[4].hoverImage}
+                  alt={gridProducts[4].name + ' zoom'}
+                  className="absolute inset-0 rounded-lg shadow-md object-contain w-full h-48 opacity-0 group-hover:opacity-100 transition duration-300"
+                  style={{ background: 'black', maxWidth: '100%' }}
+                />
+              </div>
+              <div className="p-6 w-full flex flex-col items-center">
+                <h2 className="text-2xl font-bold mb-2 text-[#ff00ea]">{gridProducts[4].name}</h2>
+                <p className="text-[#00fff0] mb-4 text-center font-mono">{gridProducts[4].tagline}</p>
+                <a href={gridProducts[4].etsy} target="_blank" rel="noopener noreferrer" className="button-buy mt-2 px-8 py-3 text-lg font-extrabold shadow-2xl">Buy on Etsy</a>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <footer className="text-center py-8 text-[#00fff0] border-t border-[#ff00ea] mt-12 font-mono">
