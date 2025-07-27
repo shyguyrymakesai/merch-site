@@ -89,13 +89,20 @@ function App() {
     <div id="top" className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-sans">
       <header className="flex flex-col items-center justify-center py-8">
         <h1 className="text-6xl font-extrabold tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00fff0] via-[#ff00ea] to-[#fff200] drop-shadow-[0_2px_24px_rgba(0,255,255,0.7)] animate-pulse">echo-league</h1>
-        <div className="flex justify-center items-center mb-2" style={{ width: '100%' }}>
+        <div className="flex justify-center items-center mb-2 gap-4" style={{ width: '100%' }}>
           <img
             src={echoLeagueBanner}
             alt="Echo League Banner"
             className="h-10 w-auto max-w-xs rounded-lg shadow-lg animate-glitch"
             style={{ objectFit: 'contain', background: 'transparent', maxWidth: '12.5rem' }}
           />
+          <a
+            href="/santorini"
+            className="ml-4 px-4 py-2 rounded-lg bg-[#e0f7fa] text-[#d72660] font-bold shadow-md hover:bg-[#fff3e0] border border-[#d72660] transition"
+            style={{ whiteSpace: 'nowrap' }}
+          >
+            Santorini Fund
+          </a>
         </div>
         <p className="text-xl text-[#00fff0] mb-8 max-w-xl text-center font-mono animate-glitch-text glitch-text">
           Futuristic, neon, and glitched-out merch for the next league of creators. Stand out. Be bold. Join the echo.
