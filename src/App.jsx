@@ -97,12 +97,12 @@ function App() {
             style={{ objectFit: 'contain', background: 'transparent', maxWidth: '12.5rem' }}
           />
           <a
-            href="/santorini"
-            className="ml-4 px-4 py-2 rounded-lg bg-[#e0f7fa] text-[#d72660] font-bold shadow-md hover:bg-[#fff3e0] border border-[#d72660] transition"
-            style={{ whiteSpace: 'nowrap' }}
-          >
-            Santorini Fund
-          </a>
+  href="/#/santorini"
+  className="ml-4 px-5 py-2 rounded-full bg-[#0f0c29] border-2 border-[#ff00ea] text-[#ff00ea] font-mono font-semibold tracking-wide transition duration-300 hover:bg-[#ff00ea]/10 hover:text-white hover:shadow-[0_0_12px_#ff00ea] backdrop-blur-md"
+>
+  💒 Our Story 
+</a>
+
         </div>
         <p className="text-xl text-[#00fff0] mb-8 max-w-xl text-center font-mono animate-glitch-text glitch-text">
           Futuristic, neon, and glitched-out merch for the next league of creators. Stand out. Be bold. Join the echo.

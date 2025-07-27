@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // ⬅️ Import this
+import { HashRouter } from 'react-router-dom'; // ✅ Use HashRouter instead of BrowserRouter
 import Root from './Root';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter> {/* ⬅️ Add this wrapper */}
+    <HashRouter> {/* ✅ Wrap with HashRouter for GitHub Pages compatibility */}
       <Root />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );

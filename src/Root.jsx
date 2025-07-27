@@ -7,7 +7,7 @@ export default function Root() {
   return (
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/santorini" element={<SantoriniFund />} />
+      <Route path="santorini" element={<SantoriniFund />} /> {/* ✅ FIXED */}
     </Routes>
   );
 }
