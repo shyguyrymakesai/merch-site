@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom'; // ✅ Use HashRouter instead of BrowserRouter
-import Root from './Root';
-import './index.css';
+import React, { useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import Santorini from "./pages/Santorini.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <HashRouter> {/* ✅ Wrap with HashRouter for GitHub Pages compatibility */}
-      <Root />
-    </HashRouter>
-  </React.StrictMode>
-);
+function Root() {
+  const [route, setRoute] = useState(window.location.hash || "#/");
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(window.location.hash || "#/");
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  useEffect(() => {
+    // scroll to top on route change to mimic page navigation
+    window.scrollTo(0, 0);
+  }, [route]);
+
+  // Simple routes
+  if (route.startsWith("#/pages/santorini")) {
+    return <Santorini />;
+  }
+  return <App />;
+}
+
+createRoot(document.getElementById("root")).render(<Root />);

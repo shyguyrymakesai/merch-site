@@ -1,12 +1,17 @@
-# React + Vite
+# EchoLeague Starter (Vite + React + Tailwind)
+A small, professional starter with the EchoLeague palette (cream / ivory / deep blue / black).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Quickstart
+```bash
+npm install
+npm run dev
+```
+Open http://localhost:5173
 
-Currently, two official plugins are available:
+## Where to edit
+- **Palette & fonts:** `tailwind.config.js`
+- **Global CSS & tokens:** `src/index.css`
+- **Header/Hero/Sections:** `src/App.jsx` and `src/components/*`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Add your images
+Replace the placeholder "Hero image" and "Image" tiles with real assets. For Etsy links, keep the UTM params so you can track conversions in Etsy stats.
